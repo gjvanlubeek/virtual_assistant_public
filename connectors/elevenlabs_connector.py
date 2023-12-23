@@ -6,7 +6,7 @@ from elevenlabs import set_api_key
 load_dotenv()
 set_api_key(os.getenv("ELEVENLABS_API_KEY"))
 
-class DigitalVoice:
+class DigitalVoice(object):
     def __init__(self, text):
         self.text = text
         self.voice = "Dorothy"

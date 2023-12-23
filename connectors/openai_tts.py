@@ -24,3 +24,8 @@ def generate_speech(text):
 def play_mp3(file_path):
     sound = AudioSegment.from_file(file_path, format="mp3")
     play(sound)
+
+
+if __name__ == '__main__':
+    generate_speech("Hi Harmen, how are you doing?")
+    play_mp3('speech.mp3')
