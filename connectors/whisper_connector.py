@@ -5,7 +5,7 @@ import openai
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-class NoteTaker :
+class NoteTaker(object):
     def __init__(self, audiofile):
         self.audiofile = open(audiofile, "rb")
 
