@@ -1,6 +1,13 @@
 from connectors.openai_connector import DigitalBrain
 from connectors.gmail_connector import PostReceiver, PostSender
 from connectors.list_maker import create_list
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+PRIVATE_EMAIL = EMAIL = os.getenv('PRIVATE_EMAIL')
+
 
 va = DigitalBrain("Act as a virtual assistant, named Dorothy, that reviews emails and summarizes specific details \
                   within the email.")
@@ -25,5 +32,5 @@ else:
     message = f"\n\n{dashed_line}\n\n".join(response)
 
     reply = PostSender()
-    reply.add_message('gert-jan@vanlubeek.com', 'overview of ' + str(len(mail_list)) + ' messages', message)
+    reply.add_message(PRIVATE_EMAIL, 'overview of ' + str(len(mail_list)) + ' messages', message)
     reply.send_message()
