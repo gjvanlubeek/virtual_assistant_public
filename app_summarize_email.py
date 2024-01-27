@@ -15,7 +15,7 @@ va = DigitalBrain("Act as a virtual assistant named Dorothy, tasked with reviewi
                   language from the sender's email")
 
 mail = PostReceiver()
-check_mail = mail.retreive_messages('seen')
+check_mail = mail.retreive_messages('unseen')
 mail_list = create_list(check_mail)
 
 if not mail_list:
