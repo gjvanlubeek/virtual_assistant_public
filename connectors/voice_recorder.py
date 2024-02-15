@@ -2,9 +2,9 @@ import sounddevice as sd
 from scipy.io.wavfile import write
  
 class VoiceRecorder(object):
-    def __init__(self):
+    def __init__(self, duration):
         self.fs = 11025 
-        self.recordtime = 5
+        self.recordtime = duration
         self.channels = 1
 
     def record_voice(self):
