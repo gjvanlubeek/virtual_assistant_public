@@ -1,16 +1,20 @@
 import os
 from dotenv import load_dotenv
-import openai
+from openai import OpenAI
 
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 class NoteTaker(object):
     def __init__(self, audiofile):
         self.audiofile = open(audiofile, "rb")
 
     def write_speech(self):
-        result = openai.Audio.translate("whisper-1", self.audiofile, response_format="text")
+        result = client.audio.translations.create(
+            model="whisper-1", 
+            file=self.audiofile,
+            response_format="text"
+            )
         return result
     
 if __name__ == '__main__':

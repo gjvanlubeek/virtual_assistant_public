@@ -8,7 +8,7 @@ client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 class DigitalBrain(object):
     def __init__(self, job_discription):
-        self.model = "gpt-3.5-turbo-1106"
+        self.model = "gpt-3.5-turbo-1106" # gpt-3.5-turbo-1106 | gpt-4-0125-preview
         self.hire_employee = job_discription
         self.conversation = []
         self.conversation.append(
@@ -27,8 +27,8 @@ class DigitalBrain(object):
 
         return result
 
-    def insert_data_list(self, own_data):
-        for data in own_data:
+    def insert_data_list(self, own_data_list):
+        for data in own_data_list:
             self.conversation.append({"role": "assistant", "content": data})
 
     def insert_data(self, data):
