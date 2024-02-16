@@ -27,5 +27,5 @@ def play_mp3(file_path):
 
 
 if __name__ == '__main__':
-    generate_speech("Hi Harmen, how are you doing?")
+    generate_speech("Hi John, how are you doing?")
     play_mp3('speech.mp3')
