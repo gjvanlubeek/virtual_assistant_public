@@ -87,7 +87,7 @@ def fit_event(text):
 
 if __name__ == "__main__":
     fit_event("get the current date and then I want you to plan a diner with friends in the next 2 weeks from 20:00 till 24:00 in \
-              Waddinxveen, do you have 5 suggestion dates that will suit for this event. make sure the next day i don't have any \
-              events planned due to hangover potential. keep your responce short within 100 words maximum. keep in mind i work \
+              Amsterdam, do you have 5 suggestion dates that will suit for this event. Make sure the next day i don't have any \
+              events planned due to hangover potential. Keep your responce short within 100 words maximum. Keep in mind I work \
               during the week from 9 till 5, and i need to sleep at least 8 hours, give me your preffered suggestion and explain \
               why this is your favorite, please.")
